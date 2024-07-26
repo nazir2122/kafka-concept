@@ -30,7 +30,7 @@ public class UserController {
 
     @PostMapping("/process")
     public ResponseEntity<UserResponse> processData(@RequestBody UserInfo userInfo) throws JsonProcessingException {
-        log.info("------------userInfo : " + userInfo);
+        log.info("------------userInfo : {}", userInfo);
         UserResponse userResponse = new UserResponse();
         userResponse = userHandlerService.userResponse(userInfo, userResponse);
         log.info("---------------userResponse : " + userResponse);
