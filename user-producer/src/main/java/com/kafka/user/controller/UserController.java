@@ -1,6 +1,7 @@
 package com.kafka.user.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.kafka.user.config.KafkaProperties;
 import com.kafka.user.model.UserInfo;
 import com.kafka.user.model.UserResponse;
 import com.kafka.user.service.UserHandlerService;

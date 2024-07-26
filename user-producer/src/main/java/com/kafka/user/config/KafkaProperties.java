@@ -68,7 +68,7 @@ public class KafkaProperties {
     /**
      * wait for the batch size if not yet full
      */
-    protected String LingerMs;
+    protected String lingerMs;
     protected String bufferMemory;
     protected String topic;
     protected String metadataMaxIdleConfig;

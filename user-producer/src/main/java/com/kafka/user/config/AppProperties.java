@@ -7,9 +7,9 @@ import org.springframework.context.annotation.Configuration;
 @Data
 @Configuration
 public class AppProperties {
-//    @Value("${ssl.keystore.type}")
-//    private String trustKeystoreType;
-//
-//    @Value("${security.protocol}")
-//    private String securityProtocol;
+    @Value("${ssl.keystore.type}")
+    private String trustKeystoreType;
+
+    @Value("${security.protocol}")
+    private String securityProtocol;
 }
