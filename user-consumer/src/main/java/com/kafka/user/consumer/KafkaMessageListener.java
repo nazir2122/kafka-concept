@@ -15,7 +15,7 @@ import java.util.List;
 @Slf4j
 @Service
 @RequiredArgsConstructor
-@PropertySource("classpath:application.properties")
+//@PropertySource("classpath:application.properties")
 public class KafkaMessageListener {
 
     @KafkaListener(id = "${spring.consumer.kafka.consumerClientid}", topics = "${spring.consumer.kafka.topic}", groupId = "${spring.consumer.kafka.consumerGroupid}", containerFactory = "kafkaListenerContainerFactory")
