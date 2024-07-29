@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class FatherInfo implements Serializable {
-    
+
     public String fatherName;
     public String fatherAge;
     public String fatherMobile;
