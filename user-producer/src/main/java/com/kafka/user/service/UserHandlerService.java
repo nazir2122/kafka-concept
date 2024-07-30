@@ -35,9 +35,18 @@ public class UserHandlerService {
         UserRequest userRequest = new UserRequest();
         userRequest.userInfo = userInfo;
         userRequest.userResponse = userResponse;
-        //send userRequest data to kafka
-        kafkaTemplate.send(kafkaProperties.getTopic(),userRequest);
-        log.info("send to user request data to kafka topic : {} with payload :  {}", kafkaProperties.getTopic(), mapper.writeValueAsString(userRequest));
+        //send userRequest data to decision service else kafka
+        try{
+            //implement later
+
+        }
+        catch (Exception ex){
+            kafkaTemplate.send(kafkaProperties.getTopic(),userInfo);
+            log.info("send to user request data to kafka topic : {} with payload :  {}", kafkaProperties.getTopic(), mapper.writeValueAsString(userRequest));
+            throw ex;
+        }
+
+
         return userResponse;
     }
 
