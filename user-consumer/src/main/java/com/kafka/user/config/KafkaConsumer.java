@@ -1,5 +1,6 @@
 package com.kafka.user.config;
 
+import com.kafka.user.model.UserInfo;
 import com.kafka.user.model.UserRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.CommonClientConfigs;
@@ -45,7 +46,7 @@ public class KafkaConsumer {
 //            configs.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class.getName());
 //            configs.put(ErrorHandlingDeserializer.KEY_DESERIALIZER_CLASS, StringDeserializer.class.getName());
 //            configs.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, UserRequest.class.getName());
-            configs.put(JsonDeserializer.VALUE_DEFAULT_TYPE, UserRequest.class.getName());
+            configs.put(JsonDeserializer.VALUE_DEFAULT_TYPE, UserInfo.class.getName());
             configs.put(JsonDeserializer.TRUSTED_PACKAGES, "*");
             configs.put(ConsumerConfig.FETCH_MIN_BYTES_CONFIG, kafkaProperties.getFetchMinBytes());
             configs.put(ConsumerConfig.FETCH_MAX_WAIT_MS_CONFIG, kafkaProperties.getFetchMaxWaitMs());

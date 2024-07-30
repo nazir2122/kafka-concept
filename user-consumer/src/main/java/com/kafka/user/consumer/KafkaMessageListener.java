@@ -1,5 +1,6 @@
 package com.kafka.user.consumer;
 
+import com.kafka.user.model.UserInfo;
 import com.kafka.user.model.UserRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -19,18 +20,18 @@ import java.util.List;
 public class KafkaMessageListener {
 
     @KafkaListener(id = "${spring.consumer.kafka.consumerClientid}", topics = "${spring.consumer.kafka.topic}", groupId = "${spring.consumer.kafka.consumerGroupid}", containerFactory = "kafkaListenerContainerFactory")
-    public void processingBatch(List<UserRequest> allRequests,
+    public void processingBatch(List<UserInfo> allUsers,
                                 @Header(KafkaHeaders.OFFSET) List<Long> offset,
                                 @Header(KafkaHeaders.RECEIVED_TOPIC) String topic,
                                 Acknowledgment acknowledgement) throws Exception {
 
         log.info("KafkaMessageListener: processingBatch:: Received Request with topic Value {}", topic);
         log.info("KafkaMessageListener: processingBatch:: Received Request with Offset Value {}", offset);
-        log.info("KafkaMessageListener: processingBatch:: Batch list size + offset : {}", allRequests.size());
+        log.info("KafkaMessageListener: processingBatch:: Batch list size + offset : {}", allUsers.size());
 
-        for (UserRequest request : allRequests) {
-            if (request != null) {
-                log.info("request value : {}", request);
+        for (UserInfo user : allUsers) {
+            if (user != null) {
+                log.info("request value : {}", user);
                 acknowledgement.acknowledge();
                 log.info("Acknowledgment successfully");
             } else {
