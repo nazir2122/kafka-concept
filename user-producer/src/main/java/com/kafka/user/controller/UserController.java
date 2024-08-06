@@ -33,8 +33,9 @@ public class UserController {
     public ResponseEntity<UserResponse> processData(@RequestBody UserInfo userInfo) throws JsonProcessingException {
         log.info("------------userInfo : {}", userInfo);
         UserResponse userResponse = new UserResponse();
+        //add if condition in json payload to check whether it send to kafka consumer or decision service.
         userResponse = userHandlerService.userResponse(userInfo, userResponse);
-        log.info("---------------userResponse : " + userResponse);
+        log.info("---------------userResponse : {}", userResponse);
         return new ResponseEntity<>(userResponse, HttpStatus.OK);
     }
 }

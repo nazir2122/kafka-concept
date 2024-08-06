@@ -30,6 +30,9 @@ public class UserHandlerService {
     @Autowired
   KafkaTemplate<String,Object> kafkaTemplate;
 
+    @Autowired
+    KafkaPublisher kafkaPublisher;
+
     public UserResponse userResponse(UserInfo userInfo, UserResponse userResponse) throws JsonProcessingException {
         userResponseProcessData(userInfo, userResponse);
         UserRequest userRequest = new UserRequest();
@@ -38,12 +41,12 @@ public class UserHandlerService {
         //send userRequest data to decision service else kafka
         try{
             //implement later
+            //send userRequest data to decision service
 
         }
         catch (Exception ex){
-            kafkaTemplate.send(kafkaProperties.getTopic(),userInfo);
-            log.info("send to user request data to kafka topic : {} with payload :  {}", kafkaProperties.getTopic(), mapper.writeValueAsString(userRequest));
-            throw ex;
+            kafkaPublisher.kafkaPublisher(userInfo);
+             throw ex;
         }
 
 
