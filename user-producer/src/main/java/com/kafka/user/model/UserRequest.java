@@ -6,6 +6,7 @@ import java.io.Serializable;
 
 @Data
 public class UserRequest implements Serializable {
-    public UserInfo userInfo;
+    private static final long serialVersionUID = 6624075166255122029L;
+	public UserInfo userInfo;
     public UserResponse userResponse;
 }
