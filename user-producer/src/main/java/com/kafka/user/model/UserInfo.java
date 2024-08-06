@@ -1,10 +1,14 @@
 package com.kafka.user.model;
 
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+@Data
 public class UserInfo implements Serializable {
     public String userId;
     public UserName userName;
@@ -15,4 +19,5 @@ public class UserInfo implements Serializable {
     public UserProof userProof;
     public UserBankDetails userBankDetails;
     public UserAddress userAddress;
+    public String routingIndicator;
 }
