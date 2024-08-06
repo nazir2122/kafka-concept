@@ -37,6 +37,12 @@ public class KafkaProducer {
     @Autowired
    CredsProperties credsProperties;
 
+    @Bean
+    public NewTopic createUserTopic(){
+        return new NewTopic(props.topic,3,(short)1);
+    }
+//    @Primary
+//    @Qualifier("kafkaTemplate")
     @Bean("kafkaTemplate")
     public KafkaTemplate<String, Object> kafkaTemplate() {
         return new KafkaTemplate<>(producerFactory());
