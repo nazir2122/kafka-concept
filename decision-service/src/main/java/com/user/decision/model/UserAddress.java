@@ -1,6 +1,8 @@
 package com.user.decision.model;
 
-public class UserAddress {
+import java.io.Serializable;
+
+public class UserAddress implements Serializable {
     public String HouseNo;
     public String mohalla;
     public String post;

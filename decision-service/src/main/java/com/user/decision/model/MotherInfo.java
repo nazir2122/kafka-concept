@@ -1,6 +1,8 @@
 package com.user.decision.model;
 
-public class MotherInfo {
+import java.io.Serializable;
+
+public class MotherInfo implements Serializable {
     public String motherName;
     public String motherAge;
     public String motherMobile;

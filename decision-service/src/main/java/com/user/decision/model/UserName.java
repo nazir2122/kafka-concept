@@ -1,6 +1,8 @@
 package com.user.decision.model;
 
-public class UserName {
+import java.io.Serializable;
+
+public class UserName implements Serializable {
     public String firstName;
     public String middleName;
     public String lastName;

@@ -1,7 +1,9 @@
 package com.user.decision.model;
 
 
-public class UserBankDetails {
+import java.io.Serializable;
+
+public class UserBankDetails implements Serializable {
     public String accountHolderName;
     public String accountNo;
     public String ifscCode;

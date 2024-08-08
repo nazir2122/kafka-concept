@@ -1,10 +1,11 @@
 package com.user.decision.model;
 
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class UserInfo {
+public class UserInfo implements Serializable {
     public String userId;
     public UserName userName;
     public UserParentInfo userParentInfo;
@@ -14,4 +15,5 @@ public class UserInfo {
     public UserProof userProof;
     public UserBankDetails userBankDetails;
     public UserAddress userAddress;
+    public String routingIndicator;
 }

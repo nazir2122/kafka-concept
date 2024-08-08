@@ -1,6 +1,8 @@
 package com.user.decision.model;
 
-public class UserProof {
+import java.io.Serializable;
+
+public class UserProof implements Serializable {
     public String aadharNo;
     public String panNo;
     public String passportNo;
