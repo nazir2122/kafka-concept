@@ -2,6 +2,7 @@ package com.kafka.user.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.kafka.user.config.KafkaProperties;
+import com.kafka.user.model.DecisionResponse;
 import com.kafka.user.model.UserInfo;
 import com.kafka.user.model.UserResponse;
 import com.kafka.user.service.KafkaPublisher;
@@ -33,9 +34,9 @@ public class UserController {
     }
 
     @PostMapping("/process")
-    public ResponseEntity<UserResponse> processData(@RequestBody UserInfo userInfo) throws JsonProcessingException {
+    public ResponseEntity<DecisionResponse> processData(@RequestBody UserInfo userInfo) throws JsonProcessingException {
         log.info("------------userInfo : {}", userInfo);
-        UserResponse userResponse = new UserResponse();
+        DecisionResponse response = new DecisionResponse();
         //add if condition in json payload to check whether it send to kafka consumer or decision service.
 
         if(userInfo.getRoutingIndicator().equals("USR-IND")){
@@ -43,10 +44,11 @@ public class UserController {
             log.info("message sent to user consumer service successfully");
         }else {
             /* @TODO */
+            response = userHandlerService.decisionResponse(userInfo, response);
             log.info("user info data sent to decision service");
         }
-        userResponse = userHandlerService.userResponse(userInfo, userResponse);
-        log.info("---------------userResponse : {}", userResponse);
-        return new ResponseEntity<>(userResponse, HttpStatus.OK);
+
+        log.info("---------------userResponse : {}", response);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
