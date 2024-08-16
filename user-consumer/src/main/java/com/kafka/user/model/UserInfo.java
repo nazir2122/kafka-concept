@@ -18,4 +18,5 @@ public class UserInfo implements Serializable {
     public UserProof userProof;
     public UserBankDetails userBankDetails;
     public UserAddress userAddress;
+    public String routingIndicator;
 }
