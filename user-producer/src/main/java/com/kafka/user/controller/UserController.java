@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/user/v1")
 @Slf4j
+//junit test cases for below class
 public class UserController {
 
     @Autowired
