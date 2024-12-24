@@ -2,8 +2,10 @@ package com.kafka.user.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.kafka.user.config.KafkaProperties;
+import com.kafka.user.model.DecisionResponse;
 import com.kafka.user.model.UserInfo;
 import com.kafka.user.model.UserResponse;
+import com.kafka.user.service.KafkaPublisher;
 import com.kafka.user.service.UserHandlerService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,8 @@ public class UserController {
 
     @Autowired
     UserHandlerService userHandlerService;
+    @Autowired
+    KafkaPublisher kafkaPublisher;
 
     @GetMapping(value = "/")
     ResponseEntity<String> userService() {
@@ -31,11 +35,21 @@ public class UserController {
     }
 
     @PostMapping("/process")
-    public ResponseEntity<UserResponse> processData(@RequestBody UserInfo userInfo) throws JsonProcessingException {
+    public ResponseEntity<DecisionResponse> processData(@RequestBody UserInfo userInfo) throws JsonProcessingException {
         log.info("------------userInfo : {}", userInfo);
-        UserResponse userResponse = new UserResponse();
-        userResponse = userHandlerService.userResponse(userInfo, userResponse);
-        log.info("---------------userResponse : " + userResponse);
-        return new ResponseEntity<>(userResponse, HttpStatus.OK);
+        DecisionResponse response = new DecisionResponse();
+        //add if condition in json payload to check whether it send to kafka consumer or decision service.
+
+        if(userInfo.getRoutingIndicator().equals("USR-IND")){
+            kafkaPublisher.kafkaPublisher(userInfo);
+            log.info("message sent to user consumer service successfully");
+        }else {
+            /* @TODO */
+            response = userHandlerService.decisionResponse(userInfo, response);
+            log.info("user info data sent to decision service");
+        }
+
+        log.info("---------------userResponse : {}", response);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }

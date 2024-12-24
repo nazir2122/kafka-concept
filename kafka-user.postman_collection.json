@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "ca23d4ea-b9f8-4082-b3fb-631c561b37ad",
+		"name": "kafka-user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37124060"
+	},
+	"item": [
+		{
+			"name": "producer health check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/user/v1/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"v1",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producer process",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"user786\",\r\n    \"userName\": {\r\n        \"firstName\": \"Mohammad\",\r\n        \"middleName\": \"Nazir\",\r\n        \"lastName\": \"Attari\"\r\n    },\r\n    \"userParentInfo\": {\r\n        \"fatherInfo\": {\r\n            \"fatherName\": \"Mohammad Jabir\",\r\n            \"fatherAge\": 65,\r\n            \"fatherMobile\": \"1234567890\",\r\n            \"fatherAddress\": \"Mubarakpur\"\r\n        },\r\n        \"motherInfo\": {\r\n            \"motherName\": \"Raisa Khatoon\",\r\n            \"motherAge\": 60,\r\n            \"motherMobile\": \"112321232\",\r\n            \"motherAddress\": \"Newada\"\r\n        }\r\n    },\r\n    \"userAge\": 28,\r\n    \"userMobile\": [\r\n        \"1233211232\",\r\n        \"09889009889\"\r\n    ],\r\n    \"userDOB\": \"2000-12-12\",\r\n    \"userProof\": {\r\n        \"aadharNo\": \"654321123\",\r\n        \"panNo\": \"ATJP7678H\",\r\n        \"passportNo\": \"132344M\",\r\n        \"voterIdNo\": \"HKGI979J\",\r\n        \"drivingLicenseNo\": \"JGJG88686hh\"\r\n    },\r\n    \"userBankDetails\": {\r\n        \"accountHolderName\": \"Mohammad Nazir\",\r\n        \"accountNo\": \"976434560\",\r\n        \"ifscCode\": \"SBIN00003221\",\r\n        \"branchCode\": \"3221\"\r\n    },\r\n    \"userAddress\": {\r\n        \"HouseNo\": \"323\",\r\n        \"mohalla\": \"Purani Basti\",\r\n        \"post\": \"Mubarakpur\",\r\n        \"district\": \"Azamgarh\",\r\n        \"state\": \"Uttar Pradesh\",\r\n        \"country\": \"Inida\",\r\n        \"pinCode\": \"276404\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/v1/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"v1",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "producer process USR-IND",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": \"user786\",\r\n    \"userName\": {\r\n        \"firstName\": \"Mohammad\",\r\n        \"middleName\": \"Nazir\",\r\n        \"lastName\": \"Attari\"\r\n    },\r\n    \"userParentInfo\": {\r\n        \"fatherInfo\": {\r\n            \"fatherName\": \"Mohammad Jabir\",\r\n            \"fatherAge\": 65,\r\n            \"fatherMobile\": \"1234567890\",\r\n            \"fatherAddress\": \"Mubarakpur\"\r\n        },\r\n        \"motherInfo\": {\r\n            \"motherName\": \"Raisa Khatoon\",\r\n            \"motherAge\": 60,\r\n            \"motherMobile\": \"112321232\",\r\n            \"motherAddress\": \"Newada\"\r\n        }\r\n    },\r\n    \"userAge\": 28,\r\n    \"userMobile\": [\r\n        \"1233211232\",\r\n        \"09889009889\"\r\n    ],\r\n    \"userDOB\": \"2000-12-12\",\r\n    \"userProof\": {\r\n        \"aadharNo\": \"654321123\",\r\n        \"panNo\": \"ATJP7678H\",\r\n        \"passportNo\": \"132344M\",\r\n        \"voterIdNo\": \"HKGI979J\",\r\n        \"drivingLicenseNo\": \"JGJG88686hh\"\r\n    },\r\n    \"userBankDetails\": {\r\n        \"accountHolderName\": \"Mohammad Nazir\",\r\n        \"accountNo\": \"976434560\",\r\n        \"ifscCode\": \"SBIN00003221\",\r\n        \"branchCode\": \"3221\"\r\n    },\r\n    \"userAddress\": {\r\n        \"HouseNo\": \"323\",\r\n        \"mohalla\": \"Purani Basti\",\r\n        \"post\": \"Mubarakpur\",\r\n        \"district\": \"Azamgarh\",\r\n        \"state\": \"Uttar Pradesh\",\r\n        \"country\": \"Inida\",\r\n        \"pinCode\": \"276404\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/user/v1/process",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"user",
+						"v1",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "decision health check",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
