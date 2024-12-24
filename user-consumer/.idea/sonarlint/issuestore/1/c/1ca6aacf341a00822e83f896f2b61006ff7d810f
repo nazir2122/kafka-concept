@@ -1,0 +1,11 @@
+
+r
+java:S1104
+"WMake eventStatus a static final constant or non-public and provide accessors if needed.(ÁÖê®øÿÿÿÿ
+j
+java:S1104"TMake userName a static final constant or non-public and provide accessors if needed.(É”Ãğ
+n
+java:S1104"YMake uniqueEventId a static final constant or non-public and provide accessors if needed.(ø‰
+k
+java:S1104"UMake eventTime a static final constant or non-public and provide accessors if needed.(›Â×¼
+P	java:S125"<This block of commented-out lines of code should be removed.(ø‰

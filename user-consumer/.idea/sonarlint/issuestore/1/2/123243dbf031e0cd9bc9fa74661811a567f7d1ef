@@ -1,0 +1,8 @@
+
+j
+java:S1104	"TMake userInfo a static final constant or non-public and provide accessors if needed.(·ÈØÊ
+n
+java:S1104
+"XMake userResponse a static final constant or non-public and provide accessors if needed.(ë€•³
+@
+java:S1948	"*Make "userInfo" transient or serializable.(·ÈØÊ

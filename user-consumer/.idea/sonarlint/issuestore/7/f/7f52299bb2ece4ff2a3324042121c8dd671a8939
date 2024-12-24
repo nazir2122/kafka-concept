@@ -1,0 +1,20 @@
+
+h
+java:S1104"RMake userId a static final constant or non-public and provide accessors if needed.(ˆÀÕô
+o
+java:S1104	"TMake userName a static final constant or non-public and provide accessors if needed.(Ñé€éúÿÿÿÿ
+u
+java:S1104
+"ZMake userParentInfo a static final constant or non-public and provide accessors if needed.(¯êªÉøÿÿÿÿ
+n
+java:S1104"SMake userAge a static final constant or non-public and provide accessors if needed.(üë‹…ÿÿÿÿÿ
+q
+java:S1104"VMake userMobile a static final constant or non-public and provide accessors if needed.(âìöüüÿÿÿÿ
+n
+java:S1104"SMake userDOB a static final constant or non-public and provide accessors if needed.(Îâ‹øÿÿÿÿ
+p
+java:S1104"UMake userProof a static final constant or non-public and provide accessors if needed.(™€ÑÑùÿÿÿÿ
+v
+java:S1104"[Make userBankDetails a static final constant or non-public and provide accessors if needed.(Ğ–ƒÃûÿÿÿÿ
+m
+java:S1104"WMake userAddress a static final constant or non-public and provide accessors if needed.(¾ÉÆÑ

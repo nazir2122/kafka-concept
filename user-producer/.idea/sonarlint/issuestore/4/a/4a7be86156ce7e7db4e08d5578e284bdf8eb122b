@@ -1,0 +1,9 @@
+
+
+java:S1104"]Make accountHolderName a static final constant or non-public and provide accessors if needed.(®ÚÜşÿÿÿÿ8ñ‘øŒ2
+r
+java:S1104"UMake accountNo a static final constant or non-public and provide accessors if needed.(Ç¶œ±8ò‘øŒ2
+q
+java:S1104"TMake ifscCode a static final constant or non-public and provide accessors if needed.(ê†«8ò‘øŒ2
+x
+java:S1104"VMake branchCode a static final constant or non-public and provide accessors if needed.(ƒæÊùÿÿÿÿ8ò‘øŒ2
