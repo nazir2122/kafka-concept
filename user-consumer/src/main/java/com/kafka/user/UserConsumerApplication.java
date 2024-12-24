@@ -11,9 +11,7 @@ public class UserConsumerApplication {
         SpringApplication.run(UserConsumerApplication.class, args);
     }
 
-	public static void main(String[] args) {
-		SpringApplication.run(UserConsumerApplication.class, args);
-	}
+
 
 
 }
